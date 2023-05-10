@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone WordPress Theme') {
+        stage('Clone WordPress') {
             steps {
                 git 'https://github.com/saeiidmhb/wordpress.git'
             }
