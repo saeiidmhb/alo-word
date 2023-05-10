@@ -22,9 +22,9 @@ pipeline {
         stage('Deploy to Server') {
             steps {
                 sshagent(credentials: ['ssh-credentials-id']) {
-                    sh 'ssh root@192.168.51.5 "docker-compose pull"'
-                    sh 'ssh root@192.168.51.5 "docker-compose down"'
-                    sh 'ssh root@192.168.51.5 "docker-compose up -d"'
+                    sh 'ssh root@192.168.51.5 "docker-compose -f /opt/wordpress/docker-compose.yml pull"'
+                    sh 'ssh root@192.168.51.5 "docker-compose -f /opt/wordpress/docker-compose.yml down"'
+                    sh 'ssh root@192.168.51.5 "docker-compose -f /opt/wordpress/docker-compose.yml up -d"'
                 }
             }
         }
