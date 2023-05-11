@@ -11,7 +11,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
                 script {
-                     sh 'docker login -u saeiidmhb -pddk2qntr'
+                     sh 'docker login -u saeiidmhb -pqazwsx'
                     dockerImage = docker.build("saeiidmhb/wordpress:latest")
                     withDockerRegistry(credentialsId: "dockerhub-credentials", url: "") {
                         dockerImage.push()
